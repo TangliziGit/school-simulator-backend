@@ -6,6 +6,8 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "acorn": ">=5.7.4",
+    "clean-css": ">=4.1.11",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express-session": "^1.17.0",
