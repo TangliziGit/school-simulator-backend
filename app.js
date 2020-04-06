@@ -23,6 +23,7 @@ app.use(session({
 // use routers
 app.use('/events', require('./routes/events'));
 app.use('/sessions', require('./routes/sessions'));
+app.use('/courses', require('./routes/courses'));
 
 // module.exports = app;
 const listen = () => app.listen(3000);

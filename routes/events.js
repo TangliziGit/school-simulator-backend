@@ -3,16 +3,18 @@ const router = express.Router();
 const only = require('only');
 const Event = require('mongoose').model('Event');
 const Response = require('../models/response');
-
-const validSession = (req, res, callback) => {
-    if (req.session.hasOwnProperty('uid')) callback();
-    else res.status(403).send(Response.fail('Please login'));
-};
+const validSession = require('../util/sessionUtil').validSession;
 
 const findByIdAndUid = (req, res, callback) =>
-    validSession(req, res, () => Event.find({id: req.params.id, uid: req.session.uid}, callback));
+    validSession(req, res, () => Event.find({
+        id: req.params.id,
+        uid: req.session.uid
+    }, callback));
+
 const findByUid = (req, res, callback) =>
-    validSession(req, res, () => Event.find({uid: req.session.uid}, callback));
+    validSession(req, res, () => Event.find({
+        uid: req.session.uid
+    }, callback));
 
 router.get('/', (req, res, next) =>
     findByUid(req, res, (err, events) => res.send(Response.ok(events))));

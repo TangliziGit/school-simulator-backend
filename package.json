@@ -7,14 +7,18 @@
   },
   "dependencies": {
     "acorn": ">=5.7.4",
+    "cheerio": "^1.0.0-rc.3",
     "clean-css": ">=4.1.11",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express-session": "^1.17.0",
     "http-errors": "~1.6.3",
+    "moment": "^2.24.0",
     "mongoose": "^5.9.4",
     "morgan": "~1.9.1",
     "only": "0.0.2",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "request": "^2.88.2",
+    "xmldom": "^0.3.0"
   }
 }
